@@ -2,7 +2,7 @@ import 'package:batiment_revolution/presentation/page/contruction_calculator/cal
 import 'package:batiment_revolution/presentation/page/floor_plan/floor_plan_inspiration_view.dart';
 import 'package:flutter/material.dart';
 
-import 'presentation/page/homePage.dart';
+import 'presentation/page/home_page.dart';
 import 'presentation/page/make_devise/widgets/make_devis_view.dart';
 import 'presentation/page/plan_inspiration/plan_inspiration_view.dart';
 import 'presentation/routes/routes.dart';
