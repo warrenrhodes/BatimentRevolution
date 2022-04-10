@@ -35,9 +35,17 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
+  # This packages statically checks dart code. Dart-enabled IDEs typically present the issues identified 
+  # by the analyzer in their UI. Alternatively, the analyzer can be invoked manually by running
+  # flutter analyze.
+  flutter_lints: ^1.0.4
+
   # Wrapper around InheritedWidget, useful for passing states
   # down the widget tree.
   provider: ^6.0.2
+
+  # This following help to print and debug in console.
+  logging: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -48,7 +56,6 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
