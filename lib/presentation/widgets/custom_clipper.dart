@@ -5,12 +5,28 @@ import 'package:flutter/material.dart';
 
 /// Clip type of figure.
 enum ClipType {
+<<<<<<< HEAD
   bottom,
   semiCircle,
   halfCircle,
   multiple,
 }
 
+=======
+  /// Bottom cliptype.
+  bottom,
+
+  /// Semie circle cliptype.
+  semiCircle,
+
+  /// half circle cliptype.
+  halfCircle,
+
+  /// multiple cliptype.
+  multiple,
+}
+
+>>>>>>> add_intenationalization
 /// Construct a custom clipper.
 class MyCustomClipper extends CustomClipper<Path> {
   final ClipType _clipType;

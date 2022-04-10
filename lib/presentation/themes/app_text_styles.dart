@@ -4,8 +4,6 @@ import 'app_colors.dart';
 /// List of the Customers text styles.
 class AppTextStyles {
   static const FontWeight _semiBold = FontWeight.w600;
-  static const FontWeight _medium = FontWeight.w500;
-  static const FontWeight _regular = FontWeight.w400;
   static const FontWeight _large = FontWeight.w900;
 
   /// Text label of home item card.

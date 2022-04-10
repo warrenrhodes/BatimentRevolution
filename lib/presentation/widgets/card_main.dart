@@ -3,12 +3,20 @@ import 'package:flutter/material.dart';
 import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
 
+<<<<<<< HEAD
 /// Display card of feature.
+=======
+/// The Cart of feature.
+>>>>>>> add_intenationalization
 class CardMain extends StatelessWidget {
   final ImageProvider _image;
   final String _title;
 
+<<<<<<< HEAD
   /// Construct the new [CardMain].
+=======
+  /// Constructor of new [CardMain].
+>>>>>>> add_intenationalization
   const CardMain(
     this._image,
     this._title,
