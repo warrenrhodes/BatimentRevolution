@@ -3,27 +3,31 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-///
-enum ClipType { bottom, semiCircle, halfCircle, multiple }
+/// Clip type of figure.
+enum ClipType {
+  bottom,
+  semiCircle,
+  halfCircle,
+  multiple,
+}
 
-///
+/// Construct a custom clipper.
 class MyCustomClipper extends CustomClipper<Path> {
-  ///
-  ClipType clipType;
+  final ClipType _clipType;
 
-  ///
-  MyCustomClipper({required this.clipType});
+  /// Construct a new clipper.
+  MyCustomClipper(this._clipType);
 
   @override
   Path getClip(Size size) {
     final Path path = Path();
-    if (clipType == ClipType.bottom) {
+    if (_clipType == ClipType.bottom) {
       _createBottom(size, path);
-    } else if (clipType == ClipType.semiCircle) {
+    } else if (_clipType == ClipType.semiCircle) {
       _createSemiCirle(size, path);
-    } else if (clipType == ClipType.halfCircle) {
+    } else if (_clipType == ClipType.halfCircle) {
       _createHalfCircle(size, path);
-    } else if (clipType == ClipType.multiple) {
+    } else if (_clipType == ClipType.multiple) {
       _createMultiple(size, path);
     }
     path.close();
@@ -31,8 +35,9 @@ class MyCustomClipper extends CustomClipper<Path> {
   }
 
   void _createSemiCirle(Size size, Path path) {
-    path.lineTo(size.width / 1.40, 0);
-
+    path
+      ..lineTo(size.width / 1.40, 0)
+      ..lineTo(0, size.height / 1.75);
     final Offset firstControlPoint =
         Offset(size.width / 1.30, size.height / 2.5);
     final Offset firstEndPoint = Offset(size.width / 1.85, size.height / 1.85);
@@ -41,17 +46,15 @@ class MyCustomClipper extends CustomClipper<Path> {
         Offset(size.width / 4, size.height / 1.45);
     final Offset secondEndPoint = Offset(0, size.height / 1.75);
 
-    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
-        firstEndPoint.dx, firstEndPoint.dy);
-
-    path.quadraticBezierTo(
-      secondControlPoint.dx,
-      secondControlPoint.dy,
-      secondEndPoint.dx,
-      secondEndPoint.dy,
-    );
-
-    path.lineTo(0, size.height / 1.75);
+    path
+      ..quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
+          firstEndPoint.dx, firstEndPoint.dy)
+      ..quadraticBezierTo(
+        secondControlPoint.dx,
+        secondControlPoint.dy,
+        secondEndPoint.dx,
+        secondEndPoint.dy,
+      );
   }
 
   void _createBottom(Size size, Path path) {
@@ -65,12 +68,14 @@ class MyCustomClipper extends CustomClipper<Path> {
   }
 
   void _createHalfCircle(Size size, Path path) {
-    path.lineTo(size.width / 2, 0);
+    path
+      ..lineTo(size.width / 2, 0)
+      ..lineTo(0, size.height);
+
     final Offset firstControlPoint = Offset(size.width / 1.10, size.height / 2);
     final Offset firstEndPoint = Offset(size.width / 2, size.height);
     path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
         firstEndPoint.dx, firstEndPoint.dy);
-    path.lineTo(0, size.height);
   }
 
   void _createMultiple(Size size, Path path) {
@@ -92,5 +97,5 @@ class MyCustomClipper extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(CustomClipper oldClipper) => true;
+  bool shouldReclip(CustomClipper<Path> oldClipper) => true;
 }

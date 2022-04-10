@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
             Stack(
               children: <Widget>[
                 ClipPath(
-                  clipper: MyCustomClipper(clipType: ClipType.bottom),
+                  clipper: MyCustomClipper(ClipType.bottom),
                   child: Container(
                     color: AppColors.kGreenRGBO,
                     height: statusBarHeight,
