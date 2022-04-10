@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         minimum: EdgeInsets.zero,
         child: Column(
-          children: [
+          children: <Widget>[
             Stack(
               children: <Widget>[
                 ClipPath(
@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                         aspectRatio: 1,
                         enlargeCenterPage: true,
                       ),
-                      items: [
+                      items: <Container>[
                         _caroucelTitle('Construction Estimation Calculator'),
                         _caroucelTitle(
                             'Choose a quote according to your means'),
@@ -80,21 +80,21 @@ class HomePage extends StatelessWidget {
                           alignment: WrapAlignment.center,
                           runSpacing: 25,
                           spacing: 25,
-                          children: <Widget>[
+                          children: const <Widget>[
                             CardMain(
-                              const AssetImage('assets/plan.jpg'),
+                              AssetImage('assets/plan.jpg'),
                               'Get inspired by our plans',
                             ),
                             CardMain(
-                              const AssetImage('assets/wall_1.png'),
+                              AssetImage('assets/wall_1.png'),
                               'Construction calculator',
                             ),
                             CardMain(
-                              const AssetImage('assets/file_1.png'),
+                              AssetImage('assets/file_1.png'),
                               'Create your own estimate format',
                             ),
                             CardMain(
-                              const AssetImage('assets/devis_1.jpeg'),
+                              AssetImage('assets/devis_1.jpeg'),
                               'Get inspired by our estimation',
                             ),
                           ],
@@ -126,20 +126,17 @@ class HomePage extends StatelessWidget {
   }
 }
 
-SizedBox _caroucelTitle(String title) => SizedBox(
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-          shape: BoxShape.rectangle,
-          color: Colors.black.withOpacity(0.1),
-        ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Text(title,
-                textAlign: TextAlign.center,
-                style: AppTextStyles.carouselTitle),
-          ),
+Container _caroucelTitle(String title) => Container(
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+        shape: BoxShape.rectangle,
+        color: Colors.black.withOpacity(0.1),
+      ),
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Text(title,
+              textAlign: TextAlign.center, style: AppTextStyles.carouselTitle),
         ),
       ),
     );
