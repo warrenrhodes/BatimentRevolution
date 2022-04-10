@@ -3,27 +3,38 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-///
-enum ClipType { bottom, semiCircle, halfCircle, multiple }
+/// Clip type of figure.
+enum ClipType {
+  /// Bottom cliptype.
+  bottom,
 
-///
+  /// Semie circle cliptype.
+  semiCircle,
+
+  /// half circle cliptype.
+  halfCircle,
+
+  /// multiple cliptype.
+  multiple,
+}
+
+/// Construct a custom clipper.
 class MyCustomClipper extends CustomClipper<Path> {
-  ///
-  ClipType clipType;
+  final ClipType _clipType;
 
-  ///
-  MyCustomClipper({required this.clipType});
+  /// Construct a new clipper.
+  MyCustomClipper(this._clipType);
 
   @override
   Path getClip(Size size) {
     final Path path = Path();
-    if (clipType == ClipType.bottom) {
+    if (_clipType == ClipType.bottom) {
       _createBottom(size, path);
-    } else if (clipType == ClipType.semiCircle) {
+    } else if (_clipType == ClipType.semiCircle) {
       _createSemiCirle(size, path);
-    } else if (clipType == ClipType.halfCircle) {
+    } else if (_clipType == ClipType.halfCircle) {
       _createHalfCircle(size, path);
-    } else if (clipType == ClipType.multiple) {
+    } else if (_clipType == ClipType.multiple) {
       _createMultiple(size, path);
     }
     path.close();

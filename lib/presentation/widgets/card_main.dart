@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../themes/app_colors.dart';
 import '../themes/app_text_styles.dart';
-import 'custom_clipper.dart';
 
-///
+/// The Cart of feature.
 class CardMain extends StatelessWidget {
   final ImageProvider _image;
   final String _title;
 
-  ///
-  CardMain(
+  /// Constructor of new [CardMain].
+  const CardMain(
     this._image,
     this._title,
   );
