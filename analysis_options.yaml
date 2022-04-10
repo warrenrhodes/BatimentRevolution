@@ -58,7 +58,6 @@ linter:
     - avoid_positional_boolean_parameters
     - avoid_print
     - avoid_private_typedef_functions
-    - avoid_redundant_argument_values
     - avoid_relative_lib_imports
     - avoid_renaming_method_parameters
     - avoid_return_types_on_setters
@@ -129,11 +128,6 @@ linter:
     - prefer_asserts_with_message
     - prefer_collection_literals
     - prefer_conditional_assignment
-    - prefer_const_constructors
-    - prefer_const_constructors_in_immutables
-    - prefer_const_declarations
-    - prefer_const_literals_to_create_immutables
-    - prefer_constructors_over_static_methods
     - prefer_contains
     - prefer_equal_for_default_values
     - prefer_expression_function_bodies
@@ -149,7 +143,6 @@ linter:
     - prefer_if_null_operators
     - prefer_initializing_formals
     - prefer_inlined_adds
-    - prefer_int_literals
     - prefer_interpolation_to_compose_strings
     - prefer_is_empty
     - prefer_is_not_empty

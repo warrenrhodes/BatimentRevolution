@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'presentation/page/contruction_calculator/calculator_constructor_view.dart';
+import 'presentation/page/construction_calculator/calculator_constructor_view.dart';
 import 'presentation/page/floor_plan/floor_plan_inspiration_view.dart';
 import 'presentation/page/home_page.dart';
 import 'presentation/page/make_devis/widgets/make_devis_view.dart';
 import 'presentation/page/plan_inspiration/plan_inspiration_view.dart';
 import 'presentation/routes/routes.dart';
-import 'presentation/utils/const.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +21,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: AppColors.lighTheme(context),
         onGenerateRoute: (RouteSettings settings) {
           switch (settings.name) {
             case PageRoutes.calculatorConstructor:
