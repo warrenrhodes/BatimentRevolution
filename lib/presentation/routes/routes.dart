@@ -1,3 +1,4 @@
+/// The page route list of app.
 class PageRoutes {
   /// The devis inspiration route.
   static const String planInspiration = '/planInpiration';

@@ -47,6 +47,12 @@ dependencies:
   # This following help to print and debug in console.
   logging: ^1.0.2
 
+  # Google font
+  google_fonts: ^2.3.1
+
+  # Package to get carousel image or widget
+  carousel_slider: ^4.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
